@@ -1,4 +1,5 @@
 package com.linklist;
+//定义链表结点
 public class ListNode {
     //节点值
     int val;
