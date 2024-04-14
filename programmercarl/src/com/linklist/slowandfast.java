@@ -1,3 +1,5 @@
+import com.linklist.ListNode;
+
 public class slowandfast {
     public static void main(String[] args) {
         
