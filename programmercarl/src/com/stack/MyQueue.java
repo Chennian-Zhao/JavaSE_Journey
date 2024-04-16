@@ -10,15 +10,12 @@ public class MyQueue {
         stackIn = new Stack<>();
         stackOut = new Stack<>();
     }
-
     public void push(int x) {
         stackIn.push(x);
     }
-
     public int pop() {
         dumpstackIn();
         return stackOut.pop();
-
     }
 
     public int peek() {
@@ -37,7 +34,6 @@ public class MyQueue {
             stackOut.push(stackIn.pop());
         }
     }
-
 }
 
 /**
