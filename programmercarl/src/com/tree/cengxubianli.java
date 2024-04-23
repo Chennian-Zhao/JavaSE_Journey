@@ -1,3 +1,10 @@
+package com.tree;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -24,12 +31,11 @@ class cengxubianli {
             int len = qu.size();
             while(len > 0){
                 TreeNode cur = qu.poll();
-                if(cur != null){
-                itemList.add(cur.val);
-                if(cur.left!=null) qu.offer(cur.left);
-                if(cur.right!=null) qu.offer(cur.right);
+                if(cur != null) {
+                    itemList.add(cur.val);
+                    if (cur.left != null) qu.offer(cur.left);
+                    if (cur.right != null) qu.offer(cur.right);
                 }
-                
                 len--;
             }
             ans.add(itemList);

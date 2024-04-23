@@ -1,2 +1,8 @@
-package com.stack;public class ciclequeue {
+package com.stack;
+
+public class ciclequeue {
+    public static void main(String[] args) {
+
+    }
+
 }
