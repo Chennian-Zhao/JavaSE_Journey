@@ -1,24 +1,34 @@
 package com.fundamental;
+import java.util.*;
+import java.io.*;
+public class quickSort{
+    public static void main(String[] args) throws Exception{
 
-import java.util.Scanner;
-
-public class quickSort {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        PrintWriter wr = new PrintWriter(new OutputStreamWriter(System.out));
+        //读首行的数字
+        int n = Integer.parseInt(br.readLine());
         int[] arr = new int[n];
+
+        String[] strArr =  br.readLine().split(" ");
         for (int i = 0; i < n; i++) {
-            int a = in.nextInt();
-            arr[i] = a;
+            arr[i] = Integer.parseInt(strArr[i]);
         }
-        quickSortMethod(arr, 0, n - 1);
+
+        quickSort(arr,0,n-1);
+        // for (int a = 0; a < arr.length; a++) {
+        //     System.out.print(arr[a]+" ");
+        // }
+        // 打印排序后的数组
         for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + " ");
+            wr.print(arr[i] + " ");
         }
+        wr.flush();  // 刷新 PrintWriter 对象，确保所有的输出都被写入控制台
+        br.close();
+
     }
 
-    //快排的本质就是分治
-    private static int[] quickSortMethod(int[] arr, int left, int right) {
+    private static int[] quickSort(int[] arr, int left, int right) {
         // 递归终止条件，如果左边界大于等于右边界则认为递归结束
         if (left >= right) {
             return arr;
@@ -44,8 +54,8 @@ public class quickSort {
             }
         }
         // 由于分界值取的是left + right >> 1，因此递归取的是left，j j + 1，right
-        quickSortMethod(arr, left, j);
-        quickSortMethod(arr, j + 1, right);
+        quickSort(arr, left, j);
+        quickSort(arr, j + 1, right);
         return arr;
     }
 
