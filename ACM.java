@@ -16,8 +16,7 @@ public class ACM {
             sum += w[i];
         }
 
-        System.out.println(sum); // 输出元素和
-    }
+        System.out.println(sum); // 输出元素和k
     /*
      * import java.util.Scanner;
      * public class Main{
